@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: signal-api
+    env: docker
+    repo: https://github.com/YOUR_USERNAME/signal-api-render
+    region: frankfurt
+    envVars:
+      - key: MODE
+        value: native
+    disk:
+      name: signal-data
+      mountPath: /home/.local/share/signal-cli
+    plan: free
+    autoDeploy: true
